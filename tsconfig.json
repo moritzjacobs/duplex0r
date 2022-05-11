@@ -1,0 +1,9 @@
+{
+	"extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
+	"compilerOptions": {
+		"target": "ESNext",
+		"moduleResolution": "node",
+		"outDir": "dist"
+	},
+	"include": ["src"]
+}

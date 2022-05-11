@@ -1,0 +1,7 @@
+{
+	"extends": ["peerigon/presets/prettier-typescript-node.js"],
+	"root": true,
+	"rules": {
+		"node/no-missing-import": "off"
+	}
+}

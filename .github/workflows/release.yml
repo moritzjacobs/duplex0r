@@ -1,0 +1,38 @@
+name: 🚀 Release
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+        steps:
+            - name: 🛑 Cancel Previous Runs
+              uses: styfle/cancel-workflow-action@a40b8845c0683271d9f53dfcb887a7e181d3918b # pin@0.9.1
+            - name: ⬇️ Checkout repo
+              uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # pin@v2
+            - name: ⎔ Setup node
+              uses: actions/setup-node@25316bbc1f10ac9d8798711f44914b1cf3c4e954 # pin@v2
+              with:
+                  node-version: 16.x
+            - name: 📥 Install dependencies
+              run: |
+                  npm ci --ignore-scripts
+            - name: 🏗 Build package
+              run: |
+                  npm run build
+              env:
+                  CI: true
+
+            # - RELEASE ---------------------------------------------------------------------------------------
+
+            - name: 🚀 Release on npm
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  npm run release
