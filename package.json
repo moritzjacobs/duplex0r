@@ -1,0 +1,25 @@
+{
+	"name": "duplex0r",
+	"version": "0.0.0-semantic-release",
+	"description": "Correctly sort the pages of duplex PDF documents scanned with a non-duplex scanner",
+	"main": "index.js",
+	"scripts": {
+		"test": "run-s test:lint test:types test:unit"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/moritzjacobs/duplex0r.git"
+	},
+	"keywords": [
+		"scan",
+		"pdf",
+		"sort",
+		"duplex"
+	],
+	"author": "Moritz Jacobs <mail@moritzjacobs.de>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/moritzjacobs/duplex0r/issues"
+	},
+	"homepage": "https://github.com/moritzjacobs/duplex0r#readme"
+}
