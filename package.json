@@ -17,10 +17,6 @@
 		"build": "tsc",
 		"release": "semantic-release"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/moritzjacobs/duplex0r.git"
-	},
 	"keywords": [
 		"scan",
 		"pdf",
